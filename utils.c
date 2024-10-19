@@ -53,7 +53,7 @@ int charsToInt(const char *str, int *err)
             break;
         }
     }
-    return result * (negative ?: -1);
+    return result * (negative ? -1 : 1);
 }
 
 bool isValidOperator(const char *ops)
