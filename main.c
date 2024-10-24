@@ -5,9 +5,13 @@
 
 int main(int argc, char *argv[argc])
 {
+    if (argc < 6) {
+        printf("error: not enough arguments\n");
+        return -1;
+    }
     if (argc % 3 != 0)
     {
-        printf("error: worng number of arguments\n");
+        printf("error: wrong number of arguments\n");
         return -1;
     }
     int resultsCount = argc / 3 - 1;
