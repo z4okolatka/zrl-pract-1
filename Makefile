@@ -2,15 +2,17 @@ SRCS = main.c utils.c
 OBJS = $(SRCS:.c=.o)
 EXE = main
 
-all: $(EXE)
+.PHONY: all build clean run
 
-$(EXE): $(OBJS)
+all: build
+
+build: $(OBJS)
 	gcc -o $(EXE) $(OBJS)
 
 $(OBJS): $(SRCS)
 	gcc -c $(SRCS)
 
-run: $(EXE)
+run: build
 	./$(EXE) $(ARGS)
 
 clean:
