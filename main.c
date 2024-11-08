@@ -56,6 +56,9 @@ int main(int argc, char *argv[argc])
         free(results);
         return -1;
     }
-    printf("Результирующая строка: %s\n", convertToString(resultsCount, results, k));
+    char *result = convertToString(resultsCount, results, k);
+    printf("Результирующая строка: %s\n", result);
+    free(result);
+    free(results);
     return 0;
 }
